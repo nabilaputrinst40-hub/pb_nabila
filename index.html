@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>XI RPL 3 - Biodata & Absensi</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Library untuk membuat file Excel -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+    <div class="logo">
+        XI RPL 3
+        <span>RPL CLASS</span>
+    </div>
+
+    <div class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#biodata">Biodata</a>
+        <a href="#absensi">Absensi</a>
+        <a href="#data">Data Siswa</a>
+        <a href="#tentang">Tentang</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">WELCOME TO</p>
+
+        <h1>
+            SISTEM BIODATA
+            <span>& ABSENSI</span>
+        </h1>
+
+        <h2>XI RPL 3</h2>
+
+        <p class="description">
+            Website pendataan biodata dan absensi siswa
+            kelas XI Rekayasa Perangkat Lunak 3.
+        </p>
+
+        <button class="btn-primary" onclick="bukaForm()">
+            ＋ Tambah Biodata
+        </button>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="computer-icon">
+            👩‍💻
+        </div>
+
+        <h2>XI RPL 3</h2>
+
+        <p>Rekayasa Perangkat Lunak</p>
+
+        <div class="mini-info">
+
+            <div>
+                <strong id="heroTotal">0</strong>
+                <span>Siswa</span>
+            </div>
+
+            <div>
+                <strong>RPL</strong>
+                <span>Program</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BIODATA ================= -->
+<section class="section" id="biodata">
+
+    <div class="section-title">
+
+        <p>DATA SISWA</p>
+
+        <h2>Form Biodata Siswa</h2>
+
+        <span>
+            Masukkan data siswa dengan lengkap.
+        </span>
+
+    </div>
+
+
+    <form id="siswaForm" class="form-card">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>No. Absen</label>
+                <input
+                    type="number"
+                    id="absen"
+                    placeholder="Contoh: 1"
+                    required
+                >
+            </div>
+
+
+            <div class="input-group">
+                <label>Nama Lengkap</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Nama lengkap"
+                    required
+                >
+            </div>
+
+
+            <div class="input-group">
+                <label>NIS</label>
+                <input
+                    type="text"
+                    id="nis"
+                    placeholder="Nomor induk siswa"
+                    required
+                >
+            </div>
+
+
+            <div class="input-group">
+                <label>Jenis Kelamin</label>
+
+                <select id="jenisKelamin" required>
+
+                    <option value="">
+                        -- Pilih --
+                    </option>
+
+                    <option value="Laki-laki">
+                        Laki-laki
+                    </option>
+
+                    <option value="Perempuan">
+                        Perempuan
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+                <label>Tempat Lahir</label>
+
+                <input
+                    type="text"
+                    id="tempatLahir"
+                    placeholder="Tempat lahir"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+                <label>Tanggal Lahir</label>
+
+                <input
+                    type="date"
+                    id="tanggalLahir"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group full">
+                <label>Alamat</label>
+
+                <textarea
+                    id="alamat"
+                    placeholder="Alamat lengkap"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="input-group">
+                <label>No. HP</label>
+
+                <input
+                    type="text"
+                    id="nomorHP"
+                    placeholder="08xxxxxxxxxx"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+                <label>Hobi</label>
+
+                <input
+                    type="text"
+                    id="hobi"
+                    placeholder="Contoh: Coding"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+                <label>Cita-cita</label>
+
+                <input
+                    type="text"
+                    id="citaCita"
+                    placeholder="Contoh: Programmer"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-buttons">
+
+            <button
+                type="submit"
+                class="btn-primary"
+            >
+                💾 Simpan Biodata
+            </button>
+
+
+            <button
+                type="reset"
+                class="btn-secondary"
+            >
+                🔄 Kosongkan
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
+
+
+
+<!-- ================= ABSENSI ================= -->
+<section class="section attendance-section" id="absensi">
+
+    <div class="section-title">
+
+        <p>KEHADIRAN SISWA</p>
+
+        <h2>Absensi XI RPL 3</h2>
+
+        <span id="tanggalSekarang"></span>
+
+    </div>
+
+
+    <div id="daftarAbsen" class="attendance-grid">
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DATA ================= -->
+<section class="section" id="data">
+
+    <div class="section-title">
+
+        <p>DATABASE SISWA</p>
+
+        <h2>Data Siswa XI RPL 3</h2>
+
+        <span>
+            Semua data siswa dan hasil absensi.
+        </span>
+
+    </div>
+
+
+    <!-- STATISTIK -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <span>👥</span>
+            <strong id="totalSiswa">0</strong>
+            <p>Total Siswa</p>
+        </div>
+
+
+        <div class="stat-card hadir">
+            <span>✅</span>
+            <strong id="totalHadir">0</strong>
+            <p>Hadir</p>
+        </div>
+
+
+        <div class="stat-card izin">
+            <span>🟡</span>
+            <strong id="totalIzin">0</strong>
+            <p>Izin</p>
+        </div>
+
+
+        <div class="stat-card sakit">
+            <span>🔵</span>
+            <strong id="totalSakit">0</strong>
+            <p>Sakit</p>
+        </div>
+
+
+        <div class="stat-card alpa">
+            <span>❌</span>
+            <strong id="totalAlpa">0</strong>
+            <p>Alpa</p>
+        </div>
+
+    </div>
+
+
+
+    <!-- TOMBOL EXCEL -->
+    <div class="excel-box">
+
+        <div>
+
+            <h3>📊 Data Absensi</h3>
+
+            <p>
+                Simpan seluruh data siswa dan hasil absensi
+                ke dalam Microsoft Excel.
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn-excel"
+            onclick="exportExcel()"
+        >
+            📊 Export ke Excel
+        </button>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cari nama siswa..."
+            onkeyup="cariSiswa()"
+        >
+
+    </div>
+
+
+
+    <!-- TABLE -->
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Absen</th>
+
+                    <th>Nama</th>
+
+                    <th>NIS</th>
+
+                    <th>Jenis Kelamin</th>
+
+                    <th>Tempat / Tgl Lahir</th>
+
+                    <th>Alamat</th>
+
+                    <th>No. HP</th>
+
+                    <th>Hobi</th>
+
+                    <th>Cita-cita</th>
+
+                    <th>Kehadiran</th>
+
+                    <th>Aksi</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="tabelSiswa">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TENTANG ================= -->
+<section class="section about-section" id="tentang">
+
+    <div class="section-title">
+
+        <p>ABOUT WEBSITE</p>
+
+        <h2>Tentang Sistem</h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <div>📝</div>
+
+            <h3>Biodata</h3>
+
+            <p>
+                Menyimpan informasi lengkap siswa
+                XI RPL 3.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div>📋</div>
+
+            <h3>Absensi</h3>
+
+            <p>
+                Mencatat kehadiran siswa dengan
+                status Hadir, Izin, Sakit dan Alpa.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div>📊</div>
+
+            <h3>Microsoft Excel</h3>
+
+            <p>
+                Data dapat diekspor menjadi file
+                Excel untuk pengolahan lebih lanjut.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+    <h3>XI RPL 3</h3>
+
+    <p>
+        Sistem Biodata & Absensi Siswa
+    </p>
+
+    <p class="copyright">
+        © 2026 XI RPL 3 • Rekayasa Perangkat Lunak
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

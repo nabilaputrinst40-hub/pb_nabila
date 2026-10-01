@@ -1,0 +1,1242 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 20, 147, 0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(138, 43, 226, 0.35),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 0, 80, 0.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #16051b,
+            #35051f,
+            #170a32,
+            #07172d
+        );
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: rgba(20, 5, 25, 0.78);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #ff4fa3;
+
+}
+
+
+.logo span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #ddd;
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.nav-menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-menu a:hover {
+
+    color: #ff4fa3;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        150px 7%
+        80px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        0.8fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+
+.small-title {
+
+    color: #ff69b4;
+
+    letter-spacing: 5px;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(
+        45px,
+        7vw,
+        85px
+    );
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4fa3,
+            #ff1744,
+            #9c4dff,
+            #00bfff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.description {
+
+    max-width: 600px;
+
+    line-height: 1.8;
+
+    color: #ddd;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+.btn-primary {
+
+    padding:
+        14px
+        25px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1493,
+            #ff1744,
+            #8a2be2
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 20, 147, 0.3);
+
+    transition: 0.3s;
+
+}
+
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(255, 20, 147, 0.5);
+
+}
+
+
+.btn-secondary {
+
+    padding:
+        14px
+        25px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 20, 147, 0.2),
+            rgba(78, 20, 120, 0.25)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(20px);
+
+}
+
+
+.computer-icon {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-card h2 {
+
+    font-size: 35px;
+
+}
+
+
+.hero-card p {
+
+    color: #ddd;
+
+}
+
+
+.mini-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    margin-top: 30px;
+
+}
+
+
+.mini-info strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    color: #ff69b4;
+
+}
+
+
+.mini-info span {
+
+    font-size: 12px;
+
+    color: #bbb;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+
+    padding:
+        100px 7%;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-title p {
+
+    color: #ff69b4;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.section-title span {
+
+    color: #bbb;
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-card {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(20px);
+
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.input-group.full {
+
+    grid-column: 1 / -1;
+
+}
+
+
+.input-group label {
+
+    color: #ffb5d8;
+
+    font-size: 14px;
+
+}
+
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(0,0,0,0.25);
+
+    color: white;
+
+    outline: none;
+
+}
+
+
+.input-group select option {
+
+    background: #270b28;
+
+    color: white;
+
+}
+
+
+.input-group textarea {
+
+    height: 100px;
+
+    resize: vertical;
+
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+
+    border-color: #ff4fa3;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,79,163,0.2);
+
+}
+
+
+.form-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+
+/* =========================
+   ABSENSI
+========================= */
+
+.attendance-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+.attendance-card {
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.attendance-card h3 {
+
+    margin-bottom: 7px;
+
+}
+
+
+.attendance-card p {
+
+    color: #bbb;
+
+    margin-bottom: 18px;
+
+}
+
+
+.attendance-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+
+}
+
+
+.attendance-buttons button {
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.1);
+
+}
+
+
+.attendance-buttons button:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1493,
+            #8a2be2
+        );
+
+}
+
+
+.status {
+
+    display: inline-block;
+
+    padding:
+        7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.status.hadir {
+
+    background: #168b55;
+
+}
+
+
+.status.izin {
+
+    background: #a47b00;
+
+}
+
+
+.status.sakit {
+
+    background: #1667a8;
+
+}
+
+
+.status.alpa {
+
+    background: #a51442;
+
+}
+
+
+.status.belum {
+
+    background: #555;
+
+}
+
+
+/* =========================
+   STATISTIK
+========================= */
+
+.stats-grid {
+
+    max-width: 1100px;
+
+    margin:
+        0 auto
+        30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(150px, 1fr)
+        );
+
+    gap: 15px;
+
+}
+
+
+.stat-card {
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: #ff69b4;
+
+}
+
+
+.stat-card p {
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+.stat-card.hadir strong {
+
+    color: #3cff9c;
+
+}
+
+
+.stat-card.izin strong {
+
+    color: #ffd43b;
+
+}
+
+
+.stat-card.sakit strong {
+
+    color: #42aaff;
+
+}
+
+
+.stat-card.alpa strong {
+
+    color: #ff4d6d;
+
+}
+
+
+/* =========================
+   EXCEL BOX
+========================= */
+
+.excel-box {
+
+    max-width: 1100px;
+
+    margin:
+        30px auto;
+
+    padding: 25px 30px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,20,147,0.15),
+            rgba(0,191,255,0.12)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+}
+
+
+.excel-box h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.excel-box p {
+
+    color: #bbb;
+
+    font-size: 14px;
+
+}
+
+
+.btn-excel {
+
+    padding:
+        14px 22px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #168b55,
+            #21b96e
+        );
+
+    color: white;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 10px 25px
+        rgba(33,185,110,0.2);
+
+}
+
+
+.btn-excel:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+
+    max-width: 1100px;
+
+    margin:
+        0 auto
+        25px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    outline: none;
+
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    overflow-x: auto;
+
+    border-radius: 20px;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 1100px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+}
+
+
+thead {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1493,
+            #8a2be2
+        );
+
+}
+
+
+th,
+td {
+
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    font-size: 13px;
+
+}
+
+
+tbody tr:hover {
+
+    background:
+        rgba(255,255,255,0.05);
+
+}
+
+
+.delete-btn {
+
+    padding:
+        8px 12px;
+
+    border-radius: 8px;
+
+    background:
+        #b51f48;
+
+    color: white;
+
+}
+
+
+.delete-btn:hover {
+
+    background:
+        #e72b5b;
+
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.about-card {
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+}
+
+
+.about-card div {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.about-card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.about-card p {
+
+    color: #bbb;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background:
+        rgba(0,0,0,0.3);
+
+}
+
+
+footer h3 {
+
+    color: #ff69b4;
+
+    margin-bottom: 10px;
+
+}
+
+
+footer p {
+
+    color: #aaa;
+
+}
+
+
+footer .copyright {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .description {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .nav-menu {
+
+        display: none;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .excel-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .input-group.full {
+
+        grid-column: auto;
+
+    }
+
+
+    .form-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .hero {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .section {
+
+        padding-left: 5%;
+
+        padding-right: 5%;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+
+    }
+
+}
